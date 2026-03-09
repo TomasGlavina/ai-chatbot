@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Copilot Agent Chat",
+  "version": "1.0",
+
+  "permissions": ["activeTab", "scripting"],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["inject-ui.js", "content-context.js"]
+    }
+  ],
+
+  "host_permissions": [
+    "http://localhost:5173/*"
+  ]
+}
