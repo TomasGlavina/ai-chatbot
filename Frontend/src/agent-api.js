@@ -1,13 +1,28 @@
-export async function sendMessage(text, metadata = {}) {
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
+const CONVERSATION_ID_KEY = 'copilot_conversation_id';
 
-  const res = await fetch("http://localhost:3000/chat", {
+function loadConversationId() {
+  return sessionStorage.getItem(CONVERSATION_ID_KEY);
+}
+
+function saveConversationId(conversationId) {
+  if (!conversationId) {
+    return;
+  }
+
+  sessionStorage.setItem(CONVERSATION_ID_KEY, conversationId);
+}
+
+export async function sendMessage(text, metadata = {}) {
+  const res = await fetch(`${API_BASE_URL}/chat`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
       text,
-      metadata
+      metadata,
+      conversationId: loadConversationId()
     })
   });
 
@@ -15,5 +30,7 @@ export async function sendMessage(text, metadata = {}) {
     throw new Error("Server error");
   }
 
-  return await res.json();
+  const payload = await res.json();
+  saveConversationId(payload.conversationId);
+  return payload;
 }
