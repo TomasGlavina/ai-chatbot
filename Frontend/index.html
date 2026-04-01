@@ -3,16 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
+    <title>Copilot Chat</title>
   </head>
   <body>
-    <div id="chatContainer">
-      <div id="chat"></div>
-      <div id="inputBar">
-        <input id="input" placeholder="Ask the agent..." />
-        <button id="contextBtn">📄</button>
-        <button id="sendBtn">Send</button>
-      </div>
+    <div id="app">
+      <section id="chatShell" aria-label="Copilot chat">
+        <div id="chatContainer">
+          <div id="chat"></div>
+
+          <div id="inputBar">
+            <input id="input" placeholder="Ask about policies, deadlines, rooms, or support..." />
+            <button id="contextBtn" type="button">Context</button>
+            <button id="sendBtn" type="button">Send</button>
+          </div>
+        </div>
+      </section>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>

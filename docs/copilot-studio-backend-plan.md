@@ -153,7 +153,7 @@ These names are placeholders and can be adjusted once Microsoft's exact integrat
 
 Required baseline vars:
 
-- `PORT=8080`
+- `PORT=8081`
 - `FRONTEND_ORIGIN=http://localhost:3000`
 - `NODE_ENV=development`
 

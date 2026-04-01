@@ -1,4 +1,5 @@
 (function () {
+const CHAT_UI_URL = "http://localhost:3000";
 
 if (window.__COPILOT_CHAT_BUBBLE__) return;
 window.__COPILOT_CHAT_BUBBLE__ = true;
@@ -40,7 +41,8 @@ if(frame){
 frame = document.createElement("iframe");
 
 frame.id = "copilotChatFrame";
-frame.src = "http://localhost:5173";
+frame.src = CHAT_UI_URL;
+frame.title = "Copilot Chat";
 frame.style.position = "fixed";
 frame.style.bottom = "90px";
 frame.style.right = "20px";
