@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
 const DEFAULT_FRONTEND_ORIGIN = 'http://localhost:3000';
-const DEFAULT_PORT = 8080;
+const DEFAULT_PORT = 8081;
 const DEFAULT_DIRECT_LINE_DOMAIN = 'https://directline.botframework.com/v3/directline';
 const DEFAULT_POLL_INTERVAL_MS = 1000;
 const DEFAULT_POLL_ATTEMPTS = 15;

@@ -8,6 +8,6 @@ RUN npm ci
 COPY src ./src
 COPY .env.example ./.env.example
 
-EXPOSE 8080
+EXPOSE 8081
 
 CMD ["npm", "start"]
